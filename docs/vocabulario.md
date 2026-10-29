@@ -734,9 +734,9 @@ Desplazamientos. El shift se clampeta a 0..63.
 {a 4 1 >>  4 2 >> :: }
 ```
 
-### Portar expresiones de bytebeat JS a RPN
+### Portar expresiones de bytebeat JS/C a RPN
 
-Los operadores infijos de JS tienen precedencias que reagrupan todo al traducir a mano. Reglas que este lenguaje heredó de comparar contra Dolchan:
+Los operadores infijos de JS/C tienen precedencias que reagrupan todo al traducir a mano. Reglas que este lenguaje heredó de comparar contra Dolchan:
 
 1. **`%` y `*` atan más fuerte que `>>`/`<<`**: `t>>1%128` es `t >> (1%128)` = `t >> 1`, no `(t>>1) % 128`. Y el operando derecho de un shift es una expresión aditiva completa: `x>>14*t` es `x >> (14*t)`.
 2. **Las cuentas de shift variables son la textura**: en `((t>>1%128)+20)*3*t>>14*t>>18` el shift del medio es por `(14*t) & 31`, que cambia muestra a muestra y barre el valor por todos los desplazamientos. Traducirlo como multiplicaciones por `t>>14` y `t>>18` (rampas de segundos) produce el clásico "suena mucho más lento".

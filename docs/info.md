@@ -525,7 +525,7 @@ Consideraciones:
  - Apaga el scope (es su default).
  - `default` resetea el buffer de delay completo en cada llamada; usalo en `{a}`, no en `{s}`.
 
-### Precedencia de operadores (JS / Dolchan)
+### Precedencia de operadores (JS / C)
 
 Al portar expresiones infijas de bytebeat clásico a RPN, respetá este orden.
 Los operadores de arriba atan **más fuerte** que los de abajo; dentro de cada
